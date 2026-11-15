@@ -1,0 +1,47 @@
+﻿키,문구,메모
+mission_brake_name,급제동 {n}회 이하,
+mission_brake_name_zero,급제동 없이,목표치 0일 때
+mission_brake_desc,급제동을 {n}회 이하로 운전하기,
+mission_brake_desc_zero,급제동 없이 운전하기,목표치 0일 때
+mission_accel_name,급가속 {n}회 이하,
+mission_accel_name_zero,급가속 없이,목표치 0일 때
+mission_accel_desc,급가속을 {n}회 이하로 운전하기,
+mission_accel_desc_zero,급가속 없이 운전하기,목표치 0일 때
+mission_lane_name,무신호 차선변경 {n}회 이하,
+mission_lane_name_zero,무신호 차선변경 없이,목표치 0일 때
+mission_lane_desc,깜빡이 없는 차선변경 {n}회 이하,
+mission_lane_desc_zero,깜빡이 없는 차선변경 없이 운전하기,목표치 0일 때
+mission_signal_name,깜빡이 {n}% 이상,
+mission_signal_desc,차선 바꿀 때 깜빡이 {n}% 이상 켜기,
+mission_clean_km_name,감점 없이 {n}km,
+mission_clean_km_desc,감점 없이 {n}km 달리기,
+mission_seatbelt_name,출발 전 안전벨트,
+mission_seatbelt_desc,출발하기 전에 안전벨트 매기,
+mission_charge_name,충전 {n}%에서 멈추기,
+mission_charge_desc,충전을 {n}% 이하에서 멈추기,
+mission_battery_name,배터리 {n}% 지키기,
+mission_battery_desc,배터리가 {n}% 밑으로 안 내려가게,
+mission_streak_name,감점 없는 날 {n}일,
+mission_streak_desc,감점 없는 날 {n}일 연속 만들기,
+item_1_name,현무 Lv1,
+item_2_name,현무 Lv2,
+item_3_name,현무 Lv3,
+item_4_name,현무 Lv4,
+item_5_name,현무 Lv5,
+item_6_name,주작 Lv1,이름 [제안]
+item_7_name,주작 Lv2,이름 [제안]
+item_8_name,주작 Lv3,이름 [제안]
+item_9_name,주작 Lv4,이름 [제안]
+item_10_name,주작 Lv5,이름 [제안]
+item_11_name,해태 Lv1,
+item_12_name,해태 Lv2,
+item_13_name,해태 Lv3,
+item_14_name,해태 Lv4,
+item_15_name,해태 Lv5,
+item_16_name,복주머니,
+item_17_name,구름,이름 [제안]
+item_18_name,부채,이름 [제안]
+item_19_name,방패연,이름 [제안]
+item_20_name,청사초롱,이름 [제안]
+item_21_name,달항아리,이름 [제안]
+item_22_name,산타 모자,12월 시즌 소품 [제안]

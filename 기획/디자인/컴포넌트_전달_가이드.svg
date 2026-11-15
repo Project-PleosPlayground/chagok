@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="860" viewBox="0 0 720 860" font-family="Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="720" height="860" fill="#FFFFFF"/>
+  <text x="40" y="52" font-size="24" font-weight="800" fill="#131417">컴포넌트 이렇게 보내주세요</text>
+
+  <!-- ① 크기만 다르면 같은 것 -->
+  <rect x="24" y="80" width="672" height="236" rx="20" fill="#F2F2F7"/>
+  <text x="48" y="118" font-size="18" font-weight="700" fill="#131417">① 크기만 다르면 같은 것</text>
+  <text x="48" y="142" font-size="14" fill="#636366">대표 SVG 1개만</text>
+  <rect x="64" y="176" width="96" height="52" rx="18" fill="#44464E"/>
+  <rect x="184" y="164" width="150" height="76" rx="24" fill="#44464E"/>
+  <path d="M370 202 H440" stroke="#8E8E93" stroke-width="3" stroke-linecap="round"/>
+  <path d="M430 192 L442 202 L430 212" fill="none" stroke="#8E8E93" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="468" y="178" width="196" height="48" rx="12" fill="#FFFFFF"/>
+  <text x="488" y="208" font-size="15" font-family="Consolas, monospace" fill="#131417">button.svg</text>
+  <circle cx="636" cy="202" r="12" fill="#2EA44F"/>
+  <path d="M630 202 L634.5 206.5 L642 198" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="48" y="268" font-size="13" font-weight="700" fill="#636366">예)</text>
+  <g font-size="12.5" font-family="Consolas, monospace" fill="#8E8E93">
+    <text x="76" y="268">save_button.svg  delete_button.svg  apply_button.svg</text>
+    <text x="76" y="290">buy_button.svg  complete_mission_button.svg</text>
+  </g>
+  <path d="M488 279 H528" stroke="#8E8E93" stroke-width="2" stroke-linecap="round"/>
+  <path d="M520 272 L529 279 L520 286" fill="none" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="540" y="284" font-size="14" font-weight="700" font-family="Consolas, monospace" fill="#131417">button.svg</text>
+
+  <!-- ② 상태는 파일 이름 끝에 -->
+  <rect x="24" y="336" width="672" height="290" rx="20" fill="#F2F2F7"/>
+  <text x="48" y="374" font-size="18" font-weight="700" fill="#131417">② 상태는 파일 이름 끝에</text>
+
+  <text x="48" y="426" font-size="14" font-weight="700" fill="#636366">탭 버튼</text>
+  <g text-anchor="middle">
+    <text x="214" y="406" font-size="13" fill="#131417">선택 안 함</text>
+    <rect x="160" y="416" width="108" height="44" rx="22" fill="#E5E5EA"/>
+    <text x="214" y="484" font-size="13" font-family="Consolas, monospace" fill="#636366">_default</text>
+
+    <text x="358" y="406" font-size="13" fill="#131417">선택</text>
+    <rect x="304" y="416" width="108" height="44" rx="22" fill="#FFFFFF" stroke="#D1D1D6"/>
+    <text x="358" y="484" font-size="13" font-family="Consolas, monospace" fill="#636366">_selected</text>
+
+    <text x="502" y="406" font-size="13" fill="#131417">터치 중</text>
+    <rect x="448" y="416" width="108" height="44" rx="22" fill="#C7C7CC"/>
+    <text x="502" y="484" font-size="13" font-family="Consolas, monospace" fill="#636366">_pressed</text>
+  </g>
+
+  <text x="48" y="536" font-size="14" font-weight="700" fill="#636366">일반 버튼</text>
+  <g text-anchor="middle">
+    <rect x="160" y="512" width="108" height="44" rx="16" fill="#44464E"/>
+    <text x="214" y="574" font-size="13" font-family="Consolas, monospace" fill="#636366">_default</text>
+  </g>
+  <text x="304" y="532" font-size="14" fill="#131417">이것만 보내 주세요</text>
+  <text x="304" y="554" font-size="13" fill="#8E8E93">누름·비활성은 자동 처리 적용합니다</text>
+
+  <rect x="48" y="590" width="624" height="1" fill="#D1D1D6"/>
+  <text x="48" y="612" font-size="13" fill="#131417">올려 주셨던 것 중 <tspan font-family="Consolas, monospace" font-weight="700">item_box_default</tspan>, <tspan font-family="Consolas, monospace" font-weight="700">item_box_selected</tspan> 이런 식으로 해 주시면 돼요!</text>
+
+  <!-- ③ 아이콘은 따로 -->
+  <rect x="24" y="646" width="672" height="190" rx="20" fill="#F2F2F7"/>
+  <text x="48" y="684" font-size="18" font-weight="700" fill="#131417">③ 아이콘은 따로</text>
+  <text x="196" y="684" font-size="14" fill="#636366"><tspan font-family="Consolas, monospace" fill="#131417">Image/Icon/</tspan> 폴더에 따로 올려 주세요</text>
+
+  <rect x="64" y="706" width="96" height="96" rx="18" fill="#F5F7FA" stroke="#BDC9E0" stroke-width="2"/>
+  <g transform="translate(128 720)">
+    <path d="M-6 6 V1 a6 6 0 0 1 12 0 V6" fill="none" stroke="#5B6473" stroke-width="2.2"/>
+    <rect x="-9" y="6" width="18" height="13" rx="3" fill="#5B6473"/>
+  </g>
+  <circle cx="190" cy="754" r="12" fill="#D9625B"/>
+  <path d="M185 749 L195 759 M195 749 L185 759" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="208" y="759" font-size="14" fill="#131417">합친 파일 1개</text>
+
+  <rect x="380" y="706" width="96" height="96" rx="18" fill="#F5F7FA" stroke="#BDC9E0" stroke-width="2"/>
+  <text x="498" y="762" font-size="22" font-weight="700" fill="#8E8E93" text-anchor="middle">+</text>
+  <rect x="520" y="730" width="48" height="48" rx="12" fill="#FFFFFF"/>
+  <g transform="translate(544 744)">
+    <path d="M-6 6 V1 a6 6 0 0 1 12 0 V6" fill="none" stroke="#5B6473" stroke-width="2.2"/>
+    <rect x="-9" y="6" width="18" height="13" rx="3" fill="#5B6473"/>
+  </g>
+  <circle cx="600" cy="754" r="12" fill="#2EA44F"/>
+  <path d="M594 754 L598.5 758.5 L606 750" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="618" y="759" font-size="14" fill="#131417">따로 2개</text>
+</svg>

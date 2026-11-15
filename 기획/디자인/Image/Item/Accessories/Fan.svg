@@ -1,0 +1,26 @@
+<svg width="260" height="205" viewBox="0 0 260 205" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><radialGradient id="g" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(130 150) scale(125)"><stop stop-color="white" stop-opacity="0"/><stop offset="1" stop-color="white" stop-opacity="0.28"/></radialGradient></defs>
+<path d="M110.9 139.0L26.1 90.0A120 120 0 0 1 42.7 67.7L114.0 134.9Z" fill="#8FAEE0"/>
+<path d="M114.0 134.9L42.7 67.7A120 120 0 0 1 64.1 49.7L117.9 131.6Z" fill="#FFF1DC"/>
+<path d="M117.9 131.6L64.1 49.7A120 120 0 0 1 89.0 37.2L122.5 129.3Z" fill="#8FAEE0"/>
+<path d="M122.5 129.3L89.0 37.2A120 120 0 0 1 116.1 30.8L127.4 128.1Z" fill="#FFF1DC"/>
+<path d="M127.4 128.1L116.1 30.8A120 120 0 0 1 143.9 30.8L132.6 128.1Z" fill="#8FAEE0"/>
+<path d="M132.6 128.1L143.9 30.8A120 120 0 0 1 171.0 37.2L137.5 129.3Z" fill="#FFF1DC"/>
+<path d="M137.5 129.3L171.0 37.2A120 120 0 0 1 195.9 49.7L142.1 131.6Z" fill="#8FAEE0"/>
+<path d="M142.1 131.6L195.9 49.7A120 120 0 0 1 217.3 67.7L146.0 134.9Z" fill="#FFF1DC"/>
+<path d="M146.0 134.9L217.3 67.7A120 120 0 0 1 233.9 90.0L149.1 139.0Z" fill="#8FAEE0"/>
+<path d="M110.9 139.0L26.1 90.0A120 120 0 0 1 233.9 90.0L149.1 139.0Z" fill="url(#g)"/>
+<path d="M126.2 147.8L26.1 90.0" stroke="#8C6249" stroke-width="4" stroke-linecap="round"/>
+<path d="M126.8 147.0L42.7 67.7" stroke="#8C6249" stroke-width="4" stroke-linecap="round"/>
+<path d="M127.6 146.3L64.1 49.7" stroke="#8C6249" stroke-width="4" stroke-linecap="round"/>
+<path d="M128.5 145.9L89.0 37.2" stroke="#8C6249" stroke-width="4" stroke-linecap="round"/>
+<path d="M129.5 145.6L116.1 30.8" stroke="#8C6249" stroke-width="4" stroke-linecap="round"/>
+<path d="M130.5 145.6L143.9 30.8" stroke="#8C6249" stroke-width="4" stroke-linecap="round"/>
+<path d="M131.5 145.9L171.0 37.2" stroke="#8C6249" stroke-width="4" stroke-linecap="round"/>
+<path d="M132.4 146.3L195.9 49.7" stroke="#8C6249" stroke-width="4" stroke-linecap="round"/>
+<path d="M133.2 147.0L217.3 67.7" stroke="#8C6249" stroke-width="4" stroke-linecap="round"/>
+<path d="M133.8 147.8L233.9 90.0" stroke="#8C6249" stroke-width="4" stroke-linecap="round"/>
+<path d="M26.1 90.0A120 120 0 0 1 233.9 90.0" stroke="#F2776A" stroke-width="7" stroke-linecap="round"/>
+<circle cx="130" cy="146" r="10" fill="#B98B6C"/><circle cx="130" cy="146" r="4" fill="#F8DF8E"/>
+<path d="M130 156v22" stroke="#F2776A" stroke-width="3" stroke-linecap="round"/><rect x="123" y="176" width="14" height="22" rx="7" fill="#F2776A"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg width="150" height="230" viewBox="0 0 150 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="h" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50 50) scale(70)"><stop stop-color="white" stop-opacity="0.5"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
+</defs>
+<path d="M14 80c6-8 34-14 61-14s55 6 61 14v8c-4 40-6 56-6 56-18 8-36 10-55 10s-37-2-55-10c0 0-2-16-6-56Z" fill="#FFF1DC"/>
+<path d="M14 80c6-8 34-14 61-14v50H12Z" fill="#8FAEE0"/>
+<path d="M75 66c27 0 55 6 61 14l-2 36H75Z" fill="#F2776A"/>
+<path d="M12 116h63v38c-22 0-42-2-57-8 0 0-2-12-6-30Z" fill="#F8DF8E"/>
+<path d="M75 116h59c-3 20-4 30-4 30-14 6-34 8-55 8Z" fill="#8FAEE0"/>
+<circle cx="75" cy="116" r="22" fill="#FFF1DC"/><circle cx="75" cy="116" r="14" fill="#F2776A"/>
+<path d="M75 66v88M13 116h124" stroke="#8C6249" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M14 80c6-8 34-14 61-14s55 6 61 14v8c-4 40-6 56-6 56-18 8-36 10-55 10s-37-2-55-10c0 0-2-16-6-56Z" stroke="#B98B6C" stroke-width="4"/>
+<path d="M14 80c6-8 34-14 61-14s55 6 61 14v8c-4 40-6 56-6 56-18 8-36 10-55 10s-37-2-55-10c0 0-2-16-6-56Z" fill="url(#h)"/>
+<path d="M75 154c-6 20 8 28 0 44s-6 20-2 28" stroke="#F2776A" stroke-width="5" stroke-linecap="round"/>
+<circle cx="76" cy="216" r="6" fill="#F8DF8E"/>
+</svg>

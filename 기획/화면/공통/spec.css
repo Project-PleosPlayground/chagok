@@ -1,0 +1,92 @@
+/* 영역 사양 공통 모양. 고친 뒤 node 기획/화면/공통/build.js 로 영역 사양에 다시 넣는다. */
+:root {
+  --l0:#8a8f98; --l1:#2563eb; --l2:#ea580c; --l3:#dc2626; --mg:#dc2626;
+  --ink:#16181d; --sub:#5f6672; --faint:#9aa1ab; --line:#e4e7ec; --soft:#f6f7f9; --bg:#ffffff;
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--soft); color:var(--ink); font-family:Pretendard,"Malgun Gothic","Apple SD Gothic Neo",sans-serif; font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased; }
+main { max-width:1360px; margin:0 auto; padding:32px 16px 48px; }
+
+header { display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:12px 24px; margin-bottom:20px; }
+.eyebrow { font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--faint); text-transform:uppercase; }
+h1 { font-size:24px; font-weight:700; margin:2px 0 0; letter-spacing:-.01em; }
+.meta { display:flex; flex-wrap:wrap; gap:6px; }
+.pill { background:var(--bg); border:1px solid var(--line); border-radius:999px; padding:4px 10px; font-size:12px; color:var(--sub); white-space:nowrap; }
+.pill b { color:var(--ink); font-weight:600; }
+
+.grid { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:16px; align-items:start; }
+@media (max-width:980px){ .grid { grid-template-columns:1fr; } }
+.card { background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:16px; }
+.card + .card { margin-top:16px; }
+@media (min-width:981px){
+  header { position:sticky; top:0; z-index:10; background:var(--soft); margin:-32px 0 16px; padding:20px 0 14px; box-shadow:0 1px 0 var(--line); }
+  .canvas { position:sticky; top:104px; }
+}
+.canvas svg { display:block; width:100%; height:auto; border-radius:8px; }
+h2 { font-size:13px; font-weight:700; color:var(--sub); margin:0 0 10px; letter-spacing:.02em; }
+
+.legend { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:6px 16px; font-size:13px; }
+.legend div { display:flex; align-items:center; gap:8px; color:var(--sub); }
+.sw { width:18px; height:12px; border-radius:3px; flex:none; }
+.sw.l0 { border:2px dashed var(--l0); }
+.sw.l1 { border:2px solid var(--l1); background:rgba(37,99,235,.08); }
+.sw.l2 { border:2px solid var(--l2); background:rgba(234,88,12,.08); }
+.sw.ct { border:2px dashed var(--l2); }
+.sw.mg { background:rgba(220,38,38,.18); }
+.sym { width:18px; text-align:center; font-weight:700; color:var(--l1); flex:none; }
+
+ul.rules { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+ul.rules li { padding-left:14px; position:relative; }
+ul.rules li::before { content:""; position:absolute; left:2px; top:.62em; width:5px; height:5px; border-radius:50%; background:var(--faint); }
+ul.rules b { font-weight:600; }
+
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th { text-align:left; font-size:12px; font-weight:600; color:var(--faint); padding:0 8px 8px; border-bottom:1px solid var(--line); }
+td { padding:8px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:last-child td { border-bottom:0; }
+tr.sub td { padding-top:4px; padding-bottom:4px; color:var(--sub); }
+tr.sub td:first-child { padding-left:16px; }
+.n { display:inline-block; min-width:26px; padding:1px 6px; border-radius:5px; color:#fff; font-size:11px; font-weight:700; text-align:center; }
+.n.l0 { background:var(--l0); } .n.l1 { background:var(--l1); } .n.l2 { background:var(--l2); }
+.n.ghost { background:transparent; color:var(--l2); border:1px solid rgba(234,88,12,.4); }
+.name { font-weight:600; white-space:nowrap; }
+.name small { display:block; font-weight:400; color:var(--faint); font-size:12px; }
+code, .k { font-family:ui-monospace,"Cascadia Mono",Consolas,monospace; font-size:12px; }
+.k { background:var(--soft); border:1px solid var(--line); border-radius:4px; padding:0 4px; white-space:nowrap; }
+.drive { color:var(--sub); }
+.tbd { color:var(--l3); font-size:12px; font-weight:600; }
+
+details { border-top:1px solid var(--line); padding-top:12px; margin-top:4px; }
+details + details { margin-top:12px; }
+summary { cursor:pointer; font-size:13px; font-weight:700; color:var(--sub); list-style:none; }
+summary::-webkit-details-marker { display:none; }
+summary::before { content:"▸"; display:inline-block; width:14px; color:var(--faint); }
+details[open] summary::before { content:"▾"; }
+details ol, details ul { margin:10px 0 0; padding-left:20px; color:var(--sub); display:grid; gap:4px; }
+.cap { font-size:12px; color:var(--faint); margin:10px 2px 0; }
+
+/* 범례 추가 표시 */
+:root { --l3p:#7c3aed; }
+.sw.no { border:1px solid var(--sub); background:repeating-linear-gradient(45deg,#fff 0 3px,#9aa1ab 3px 4px); }
+.sw.gp { border:1.5px dashed var(--l2); }
+.sw.gh { border:1.5px dotted var(--l2); opacity:.6; }
+.sw.cl { height:0; border-radius:0; border-top:2px dotted var(--l0); }
+.sw.l3p { border:2px solid var(--l3p); background:rgba(124,58,237,.08); }
+.sw.scrim { background:rgba(0,0,0,.4); }
+.n.l3p { background:var(--l3p); }
+
+/* 표 */
+.off { color:var(--faint); }
+.note { font-size:12px; color:var(--sub); margin:10px 0 0; }
+.act { color:var(--sub); }
+.state td:first-child { font-weight:600; white-space:nowrap; }
+.file { font-family:ui-monospace,"Cascadia Mono",Consolas,monospace; font-size:11px; color:var(--faint); word-break:break-all; }
+td.drive { min-width:96px; }
+td code { word-break:break-all; }
+.canvas h3 { font-size:12px; font-weight:600; color:var(--faint); margin:14px 2px 6px; }
+.canvas h3:first-child { margin-top:0; }
+
+/* 시안 캡처 토글 (spec.js) */
+.cap-toggle { display:block; margin:0 0 10px auto; font:inherit; font-size:12px; color:var(--sub); background:var(--soft); border:1px solid var(--line); border-radius:999px; padding:4px 12px; cursor:pointer; }
+.cap-toggle:hover { color:var(--ink); }
+.cap-toggle[aria-pressed="true"] { color:var(--l1); border-color:var(--l1); }

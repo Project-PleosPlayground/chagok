@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 통계 탭 (DashboardView 시안) -->
+    <string name="stats_month">%1$d년 %2$d월</string>
+    <string name="stats_today_drives">오늘의 주행</string>
+    <string name="stats_day_drives">%1$d년 %2$d월 %3$d일의 주행</string>
+    <string name="stats_no_drives">이날은 주행 기록이 없어요.</string>
+    <string name="stats_score_label">안전점수</string>
+    <string name="stats_km">%1$.1f km</string>
+    <string name="stats_cumulative">누적 안전점수</string>
+    <string name="stats_vs_last_week">지난주 대비</string>
+    <string name="stats_this_week">이번 주</string>
+    <string name="stats_no_signal_short">깜빡이 안 켬</string>
+    <string name="stats_times">%1$d회</string>
+    <string name="stats_count">%1$d개</string>
+    <string name="stats_of_100">/ 100</string>
+    <string name="stats_day_analysis">주행 분석</string>
+    <string name="stats_analysis_badge">요약</string>
+    <string name="stats_next_tip">다음 주행 팁</string>
+    <string name="stats_week_chart">1주일간 주행 기록</string>
+    <string name="stats_map_open">눌러서 크게 보기</string>
+    <string name="stats_events_title">주행 중 사건 %1$d건</string>
+    <string name="stats_week_avg">평균 %1$d</string>
+    <string name="stats_week_summary">이번 주 평균 %1$d점 · 가장 잘한 날 %2$s</string>
+    <string name="stats_accel">급가속</string>
+    <string name="stats_brake">급감속</string>
+    <string name="stats_no_signal">방향지시등 미시행</string>
+    <string name="stats_night">야간 주행</string>
+    <string name="stats_night_note">오후 10시 ~ 오전 4시 주행 비율</string>
+    <string name="stats_back">목록으로</string>
+    <string name="stats_detail_title">주행 상세</string>
+    <string name="stats_missions_done">달성 미션</string>
+    <string name="stats_route">주행 구간</string>
+    <string name="stats_origin">출발</string>
+    <string name="stats_destination">도착</string>
+    <string name="stats_safe">안전 구간</string>
+    <string name="stats_danger">위험 구간</string>
+    <string name="stats_caution">주의 구간</string>
+    <string name="stats_no_events">감점 행동 없이 달린 주행이에요.</string>
+    <string name="stats_habits">운전 습관 리포트</string>
+    <string name="stats_band_good">좋음</string>
+    <string name="stats_band_ok">보통</string>
+    <string name="stats_band_bad">주의</string>
+    <string name="stats_month_drives">이달 %1$d번 주행</string>
+    <string name="stats_cell_drives">%1$d회</string>
+    <string name="stats_heat_less">적음</string>
+    <string name="stats_heat_more">많음</string>
+</resources>

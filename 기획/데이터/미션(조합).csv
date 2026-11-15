@@ -1,0 +1,10 @@
+﻿조건ID,조건,이름,내용,아이콘,목표치_1단계,목표치_2단계,목표치_3단계,목표치_4단계
+1,급제동 이하,mission_brake_name,mission_brake_desc,brake_icon,3,2,1,0
+2,급가속 이하,mission_accel_name,mission_accel_desc,accel_icon,3,2,1,0
+3,깜빡이 없는 차선변경 이하,mission_lane_name,mission_lane_desc,lane_icon,3,2,1,0
+4,깜빡이 비율 이상,mission_signal_name,mission_signal_desc,signal_icon,70,80,90,100
+5,감점 없는 거리,mission_clean_km_name,mission_clean_km_desc,clean_km_icon,5,10,20,30
+6,출발 전 안전벨트,mission_seatbelt_name,mission_seatbelt_desc,seatbelt_icon,0,,,
+7,충전 멈춤,mission_charge_name,mission_charge_desc,charge_icon,90,85,80,75
+8,배터리 지키기,mission_battery_name,mission_battery_desc,battery_icon,10,15,20,25
+9,연속 일수,mission_streak_name,mission_streak_desc,streak_icon,2,3,4,5

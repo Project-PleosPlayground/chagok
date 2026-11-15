@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 프로필·프로필 추가·온보딩 화면 문구. 값은 기획/디자인/CSV/UI 텍스트.csv 의 같은 키. 저장·취소 버튼 글자는 strings.xml -->
+<resources>
+    <string name="profile_empty">아직 프로필이 없어요.\n+ 버튼을 눌러 첫 프로필을 만들어 보세요.</string>
+    <string name="profile_select">사용할 프로필을 선택해 주세요.</string>
+    <string name="profile_select_edit">수정할 프로필을 선택해 주세요.</string>
+    <string name="profile_name">프로필 이름</string>
+    <string name="profile_name_hint">이름을 입력해 주세요</string>
+    <string name="profile_instruction">차량 화면과 앱에 이 이름으로 표시돼요.</string>
+    <string name="profile_edit_button">프로필 관리</string>
+    <string name="profile_edit_done">완료</string>
+    <!-- 프로필 삭제 팝업 (#111). UI 텍스트.csv 에 [제안]으로 있다 -->
+    <string name="profile_delete_title">프로필을 삭제할까요?</string>
+    <string name="profile_delete_body">주행 기록과 성장도 함께 지워져요.</string>
+    <!-- 아래는 화면에 보이지 않는 설명(접근성). UI 텍스트.csv 에 없다 -->
+    <string name="profile_add_description">프로필 추가</string>
+    <string name="profile_edit_description">수정</string>
+    <string name="profile_next_car_description">다음 차</string>
+    <string name="profile_clear_name_description">지우기</string>
+    <string name="app_icon_description">앱 아이콘</string>
+</resources>

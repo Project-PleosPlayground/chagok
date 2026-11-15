@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>팝업 영역 사양</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<!-- 공통:시작 (기획/화면/공통/build.js가 넣는다. 여기는 직접 고치지 않는다) -->
+<style>
+/* 생성 파일. 디자인_시스템.md 4절 팔레트, 5절 글자에서 build.js가 만든다. 직접 고치지 않는다. */
+:root {
+  --app-ink: #131417;
+  --app-button_dark: #44464E;
+  --app-text_secondary: #636366;
+  --app-text_tertiary: #8E8E93;
+  --app-line_strong: #C6C6C8;
+  --app-platform_gray: #D9D9D9;
+  --app-line: #E5E5EA;
+  --app-surface: #F2F2F7;
+  --app-white: #FFFFFF;
+  --app-navy: #152457;
+  --app-primary_blue: #2563EB;
+  --app-blue_soft: #E9F1FC;
+  --app-surface_blue: #F3F6FD;
+  --app-red: #D9625B;
+  --app-red_soft: #FFF0F1;
+  --app-green_dark: #008000;
+  --app-green: #34C759;
+  --app-green_soft: #EAF7ED;
+  --app-orange: #FF9500;
+  --app-yellow: #FFC224;
+  --app-orange_soft: #FFF3E0;
+  --type-large_bold-family: "Roboto";
+  --type-large_bold-size: 40px;
+  --type-large_bold-weight: 700;
+  --type-large_regular-family: "Roboto";
+  --type-large_regular-size: 40px;
+  --type-large_regular-weight: 400;
+  --type-medium_bold-family: "Roboto";
+  --type-medium_bold-size: 32px;
+  --type-medium_bold-weight: 700;
+  --type-medium_regular-family: "Roboto";
+  --type-medium_regular-size: 32px;
+  --type-medium_regular-weight: 400;
+  --type-small_bold-family: "Roboto";
+  --type-small_bold-size: 24px;
+  --type-small_bold-weight: 700;
+  --type-small_regular-family: "Roboto";
+  --type-small_regular-size: 24px;
+  --type-small_regular-weight: 400;
+}
+
+/* 앱 색은 모두 디자인 시스템 4절 팔레트에 있다. 여기에는 팔레트 색에서 만든 값과 모양 값만 둔다.
+   팔레트에 같은 이름이 생기면 build.js는 팔레트 값을 쓰고 이 줄은 무시한다. */
+
+/* 투명도로 쓰는 것 (디자인 시스템 4절 "투명도로 쓰는 것") */
+:root {
+  --app-ink_15: color-mix(in srgb, var(--app-ink) 15%, #FFFFFF);
+  --app-scrim: color-mix(in srgb, var(--app-ink) 40%, transparent);
+  --app-success_card: color-mix(in srgb, var(--app-green_dark) 20%, #FFFFFF);
+  --app-fail_card: color-mix(in srgb, var(--app-red) 20%, #FFFFFF);
+}
+
+/* 모양 (디자인 시스템 5절) */
+:root {
+  --radius_s: 8px;
+  --radius_m: 16px;
+  --radius_l: 24px;
+  --radius_xl: 32px;
+  --shadow_card: 0 4px 4px rgba(0, 0, 0, 0.25), 0 3px 12px rgba(0, 0, 0, 0.045);
+  --shadow_float: 0 8px 16px rgba(0, 0, 0, 0.25);
+  --shadow_soft: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* 영역 사양 공통 모양. 고친 뒤 node 기획/화면/공통/build.js 로 영역 사양에 다시 넣는다. */
+:root {
+  --l0:#8a8f98; --l1:#2563eb; --l2:#ea580c; --l3:#dc2626; --mg:#dc2626;
+  --ink:#16181d; --sub:#5f6672; --faint:#9aa1ab; --line:#e4e7ec; --soft:#f6f7f9; --bg:#ffffff;
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--soft); color:var(--ink); font-family:Pretendard,"Malgun Gothic","Apple SD Gothic Neo",sans-serif; font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased; }
+main { max-width:1360px; margin:0 auto; padding:32px 16px 48px; }
+
+header { display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:12px 24px; margin-bottom:20px; }
+.eyebrow { font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--faint); text-transform:uppercase; }
+h1 { font-size:24px; font-weight:700; margin:2px 0 0; letter-spacing:-.01em; }
+.meta { display:flex; flex-wrap:wrap; gap:6px; }
+.pill { background:var(--bg); border:1px solid var(--line); border-radius:999px; padding:4px 10px; font-size:12px; color:var(--sub); white-space:nowrap; }
+.pill b { color:var(--ink); font-weight:600; }
+
+.grid { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:16px; align-items:start; }
+@media (max-width:980px){ .grid { grid-template-columns:1fr; } }
+.card { background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:16px; }
+.card + .card { margin-top:16px; }
+@media (min-width:981px){
+  header { position:sticky; top:0; z-index:10; background:var(--soft); margin:-32px 0 16px; padding:20px 0 14px; box-shadow:0 1px 0 var(--line); }
+  .canvas { position:sticky; top:104px; }
+}
+.canvas svg { display:block; width:100%; height:auto; border-radius:8px; }
+h2 { font-size:13px; font-weight:700; color:var(--sub); margin:0 0 10px; letter-spacing:.02em; }
+
+.legend { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:6px 16px; font-size:13px; }
+.legend div { display:flex; align-items:center; gap:8px; color:var(--sub); }
+.sw { width:18px; height:12px; border-radius:3px; flex:none; }
+.sw.l0 { border:2px dashed var(--l0); }
+.sw.l1 { border:2px solid var(--l1); background:rgba(37,99,235,.08); }
+.sw.l2 { border:2px solid var(--l2); background:rgba(234,88,12,.08); }
+.sw.ct { border:2px dashed var(--l2); }
+.sw.mg { background:rgba(220,38,38,.18); }
+.sym { width:18px; text-align:center; font-weight:700; color:var(--l1); flex:none; }
+
+ul.rules { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+ul.rules li { padding-left:14px; position:relative; }
+ul.rules li::before { content:""; position:absolute; left:2px; top:.62em; width:5px; height:5px; border-radius:50%; background:var(--faint); }
+ul.rules b { font-weight:600; }
+
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th { text-align:left; font-size:12px; font-weight:600; color:var(--faint); padding:0 8px 8px; border-bottom:1px solid var(--line); }
+td { padding:8px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:last-child td { border-bottom:0; }
+tr.sub td { padding-top:4px; padding-bottom:4px; color:var(--sub); }
+tr.sub td:first-child { padding-left:16px; }
+.n { display:inline-block; min-width:26px; padding:1px 6px; border-radius:5px; color:#fff; font-size:11px; font-weight:700; text-align:center; }
+.n.l0 { background:var(--l0); } .n.l1 { background:var(--l1); } .n.l2 { background:var(--l2); }
+.n.ghost { background:transparent; color:var(--l2); border:1px solid rgba(234,88,12,.4); }
+.name { font-weight:600; white-space:nowrap; }
+.name small { display:block; font-weight:400; color:var(--faint); font-size:12px; }
+code, .k { font-family:ui-monospace,"Cascadia Mono",Consolas,monospace; font-size:12px; }
+.k { background:var(--soft); border:1px solid var(--line); border-radius:4px; padding:0 4px; white-space:nowrap; }
+.drive { color:var(--sub); }
+.tbd { color:var(--l3); font-size:12px; font-weight:600; }
+
+details { border-top:1px solid var(--line); padding-top:12px; margin-top:4px; }
+details + details { margin-top:12px; }
+summary { cursor:pointer; font-size:13px; font-weight:700; color:var(--sub); list-style:none; }
+summary::-webkit-details-marker { display:none; }
+summary::before { content:"▸"; display:inline-block; width:14px; color:var(--faint); }
+details[open] summary::before { content:"▾"; }
+details ol, details ul { margin:10px 0 0; padding-left:20px; color:var(--sub); display:grid; gap:4px; }
+.cap { font-size:12px; color:var(--faint); margin:10px 2px 0; }
+
+/* 범례 추가 표시 */
+:root { --l3p:#7c3aed; }
+.sw.no { border:1px solid var(--sub); background:repeating-linear-gradient(45deg,#fff 0 3px,#9aa1ab 3px 4px); }
+.sw.gp { border:1.5px dashed var(--l2); }
+.sw.gh { border:1.5px dotted var(--l2); opacity:.6; }
+.sw.cl { height:0; border-radius:0; border-top:2px dotted var(--l0); }
+.sw.l3p { border:2px solid var(--l3p); background:rgba(124,58,237,.08); }
+.sw.scrim { background:rgba(0,0,0,.4); }
+.n.l3p { background:var(--l3p); }
+
+/* 표 */
+.off { color:var(--faint); }
+.note { font-size:12px; color:var(--sub); margin:10px 0 0; }
+.act { color:var(--sub); }
+.state td:first-child { font-weight:600; white-space:nowrap; }
+.file { font-family:ui-monospace,"Cascadia Mono",Consolas,monospace; font-size:11px; color:var(--faint); word-break:break-all; }
+td.drive { min-width:96px; }
+td code { word-break:break-all; }
+.canvas h3 { font-size:12px; font-weight:600; color:var(--faint); margin:14px 2px 6px; }
+.canvas h3:first-child { margin-top:0; }
+
+/* 시안 캡처 토글 (spec.js) */
+.cap-toggle { display:block; margin:0 0 10px auto; font:inherit; font-size:12px; color:var(--sub); background:var(--soft); border:1px solid var(--line); border-radius:999px; padding:4px 12px; cursor:pointer; }
+.cap-toggle:hover { color:var(--ink); }
+.cap-toggle[aria-pressed="true"] { color:var(--l1); border-color:var(--l1); }
+</style>
+<script>
+// 영역 사양 공통 동작: 캔버스마다 시안 캡처를 숨기고 보이는 버튼을 단다.
+// 처음에는 보인다. 고른 상태는 보는 사람의 브라우저에만 남는다.
+// 고친 뒤 node 기획/화면/공통/build.js 로 영역 사양에 다시 넣는다.
+(function () {
+  function setup() {
+    document.querySelectorAll('.canvas').forEach(function (canvas, i) {
+      var images = canvas.querySelectorAll('svg image');
+      if (!images.length) return;
+      var key = 'spec-capture:' + document.title + ':' + i;
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'cap-toggle';
+      var shown = true;
+      try { shown = localStorage.getItem(key) !== 'hidden'; } catch (e) { /* 저장소를 못 쓰면 기본값 */ }
+      function apply() {
+        images.forEach(function (image) { image.style.display = shown ? '' : 'none'; });
+        button.textContent = shown ? '시안 캡처 숨기기' : '시안 캡처 보이기';
+        button.setAttribute('aria-pressed', String(!shown));
+      }
+      button.addEventListener('click', function () {
+        shown = !shown;
+        apply();
+        try { localStorage.setItem(key, shown ? 'shown' : 'hidden'); } catch (e) { /* 무시 */ }
+      });
+      apply();
+      canvas.insertBefore(button, canvas.firstChild);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setup);
+  else setup();
+})();
+</script>
+<!-- 공통:끝 -->
+</head>
+<body>
+<main>
+
+<header>
+  <div>
+    <div class="eyebrow">영역 사양 · 가안</div>
+    <h1>팝업</h1>
+  </div>
+  <div class="meta">
+    <span class="pill">confirm_popup · mission_info · 알림</span>
+    <span class="pill">Connect-S-17 · 2칸 창 <b>1700 × 1184</b></span>
+    <span class="pill">안쪽 여백 p <b>48 dp</b></span>
+    <span class="pill">간격 <b>8의 배수</b></span>
+  </div>
+</header>
+
+<div class="grid">
+
+<div class="canvas card">
+<h3>A · confirm_popup 안쪽 (시안 부품 위에 규칙 박스)</h3>
+<svg viewBox="0 0 415 192" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, Malgun Gothic, sans-serif">
+  <image href="data:image/png;base64,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" x="0" y="0" width="415" height="192"/>
+  <path d="M8 10 H402 V184 H8 Z M31.6 33.6 V160.4 H378.4 V33.6 Z" fill="var(--mg)" fill-opacity="0.14" fill-rule="evenodd"/>
+  <rect x="8" y="10" width="394" height="174" rx="15.8" fill="none" stroke="var(--l3p)" stroke-width="2"/>
+  <g fill="var(--l2)" fill-opacity="0.08" stroke="var(--l2)" stroke-width="1.5">
+    <rect x="31.6" y="33.6" width="346.8" height="27.6" rx="3"/>
+    <rect x="31.6" y="113.1" width="165.5" height="47.3" rx="6"/>
+    <rect x="212.9" y="113.1" width="165.5" height="47.3" rx="6"/>
+  </g>
+  <rect x="31.6" y="69.1" width="346.8" height="19.7" rx="3" fill="var(--l2)" fill-opacity="0.05" stroke="var(--l2)" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <line x1="205" y1="10" x2="205" y2="184" stroke="var(--l3p)" stroke-width="0.8" stroke-dasharray="2 3"/>
+  <g stroke="var(--sub)" stroke-width="1">
+    <line x1="120" y1="10.5" x2="120" y2="33"/><line x1="117" y1="10.5" x2="123" y2="10.5"/><line x1="117" y1="33" x2="123" y2="33"/>
+    <line x1="8.5" y1="100" x2="31" y2="100"/><line x1="8.5" y1="97" x2="8.5" y2="103"/><line x1="31" y1="97" x2="31" y2="103"/>
+    <line x1="300" y1="161" x2="300" y2="183.5"/><line x1="297" y1="161" x2="303" y2="161"/><line x1="297" y1="183.5" x2="303" y2="183.5"/>
+    <line x1="340" y1="61.5" x2="340" y2="68.7"/><line x1="337" y1="61.5" x2="343" y2="61.5"/><line x1="337" y1="68.7" x2="343" y2="68.7"/>
+    <line x1="340" y1="89.2" x2="340" y2="112.7"/><line x1="337" y1="89.2" x2="343" y2="89.2"/><line x1="337" y1="112.7" x2="343" y2="112.7"/>
+    <line x1="197.1" y1="108" x2="212.9" y2="108"/><line x1="197.1" y1="105" x2="197.1" y2="111"/><line x1="212.9" y1="105" x2="212.9" y2="111"/>
+  </g>
+  <g font-size="8" fill="var(--sub)" font-weight="700">
+    <text x="124" y="25">p</text><text x="16" y="96">p</text><text x="304" y="176">p</text>
+    <text x="345" y="68">16</text><text x="345" y="104">48</text><text x="199" y="104">32</text>
+  </g>
+  <g font-size="9" font-weight="700" text-anchor="middle">
+    <g><rect x="380" y="12" width="20" height="13" rx="3" fill="var(--l3p)"/><text x="390" y="22" fill="#fff">2</text></g>
+    <g><rect x="33" y="35" width="24" height="13" rx="3" fill="var(--l2)"/><text x="45" y="45" fill="#fff">2-1</text></g>
+    <g><rect x="33" y="71" width="24" height="13" rx="3" fill="var(--l2)"/><text x="45" y="81" fill="#fff">2-2</text></g>
+    <g><rect x="33" y="115" width="24" height="13" rx="3" fill="var(--l2)"/><text x="45" y="125" fill="#fff">2-3</text></g>
+    <g><rect x="215" y="115" width="24" height="13" rx="3" fill="var(--l2)"/><text x="227" y="125" fill="#fff">2-4</text></g>
+  </g>
+</svg>
+<p class="cap">바탕은 미션 도전 팝업 부품 시안이다. 빨간 글씨는 시안 주석이다. 2-2 점선은 본문이 없으면 빠지는 자리다.</p>
+
+<h3>B · 창 안 위치 (confirm_popup)</h3>
+<svg viewBox="0 0 1700 1184" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, Malgun Gothic, sans-serif">
+  <rect x="2" y="2" width="1696" height="1180" rx="24" fill="#ffffff"/>
+  <g fill="var(--app-surface)"><rect x="48" y="48" width="240" height="96" rx="24"/><rect x="48" y="168" width="240" height="96" rx="24"/><rect x="48" y="288" width="240" height="96" rx="24"/><rect x="48" y="408" width="240" height="96" rx="24"/></g>
+  <g fill="var(--app-surface)"><rect x="400" y="96" width="1180" height="224" rx="24"/><rect x="400" y="368" width="1180" height="224" rx="24"/><rect x="400" y="640" width="1180" height="224" rx="24"/><rect x="400" y="912" width="1180" height="224" rx="24"/></g>
+  <rect x="2" y="2" width="1696" height="1180" rx="24" fill="var(--app-ink)" fill-opacity="0.4"/>
+  <rect x="2" y="2" width="1696" height="1180" rx="24" fill="none" stroke="var(--l0)" stroke-width="5" stroke-dasharray="18 12"/>
+  <line x1="850" y1="2" x2="850" y2="1182" stroke="var(--l3p)" stroke-width="3" stroke-dasharray="8 10"/>
+  <line x1="2" y1="592" x2="1698" y2="592" stroke="var(--l3p)" stroke-width="3" stroke-dasharray="8 10"/>
+  <rect x="450" y="416" width="800" height="352" rx="32" fill="#ffffff" stroke="var(--l3p)" stroke-width="5"/>
+  <g fill="var(--l2)" fill-opacity="0.08" stroke="var(--l2)" stroke-width="3">
+    <rect x="498" y="464" width="704" height="56" rx="6"/>
+    <rect x="498" y="624" width="336" height="96" rx="24" fill="var(--app-button_dark)" fill-opacity="1"/>
+    <rect x="866" y="624" width="336" height="96" rx="24" fill="var(--app-surface)" fill-opacity="1"/>
+  </g>
+  <rect x="498" y="536" width="704" height="40" rx="6" fill="var(--l2)" fill-opacity="0.05" stroke="var(--l2)" stroke-width="3" stroke-dasharray="10 6"/>
+  <g stroke="#ffffff" stroke-width="3">
+    <line x1="1272" y1="416" x2="1272" y2="464"/><line x1="1264" y1="416" x2="1280" y2="416"/><line x1="1264" y1="464" x2="1280" y2="464"/>
+    <line x1="1272" y1="520" x2="1272" y2="536"/><line x1="1264" y1="520" x2="1280" y2="520"/><line x1="1264" y1="536" x2="1280" y2="536"/>
+    <line x1="1272" y1="576" x2="1272" y2="624"/><line x1="1264" y1="576" x2="1280" y2="576"/><line x1="1264" y1="624" x2="1280" y2="624"/>
+    <line x1="1272" y1="720" x2="1272" y2="768"/><line x1="1264" y1="720" x2="1280" y2="720"/><line x1="1264" y1="768" x2="1280" y2="768"/>
+  </g>
+  <g font-size="26" font-weight="700" fill="#ffffff"><text x="1290" y="450">p 48</text><text x="1290" y="538">16</text><text x="1290" y="610">48</text><text x="1290" y="754">p 48</text></g>
+  <g font-size="34" font-weight="700" text-anchor="middle">
+    <text x="850" y="503" fill="var(--ink)">제목</text>
+    <text x="850" y="566" fill="var(--sub)" font-weight="400">본문</text>
+    <text x="666" y="684" fill="#ffffff">하려는 일</text>
+    <text x="1034" y="684" fill="var(--ink)">닫기</text>
+  </g>
+  <g font-size="30" font-weight="700" fill="#ffffff"><text x="450" y="400">800 × 352 (본문 없으면 296)</text><text x="862" y="1170">창 가로 중앙</text><text x="1420" y="584">창 세로 중앙</text></g>
+  <g font-size="30" font-weight="700" text-anchor="middle">
+    <g><rect x="20" y="1110" width="48" height="40" rx="8" fill="var(--l0)"/><text x="44" y="1140" fill="#fff">0</text></g>
+    <g><rect x="1620" y="20" width="48" height="40" rx="8" fill="#111"/><text x="1644" y="50" fill="#fff">1</text></g>
+    <g><rect x="398" y="416" width="48" height="40" rx="8" fill="var(--l3p)"/><text x="422" y="446" fill="#fff">2</text></g>
+  </g>
+</svg>
+<p class="cap">시안은 캡처마다 팝업 위치가 달랐다(창 중앙에서 오른쪽으로 ≈ 46~115 dp). 창 정중앙으로 정했다. 뒤 화면은 미션 화면 예시다.</p>
+
+<h3>C · mission_info와 알림 (미션 화면 예시)</h3>
+<svg viewBox="0 0 1700 1184" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, Malgun Gothic, sans-serif">
+  <rect x="2" y="2" width="1696" height="1180" rx="24" fill="#ffffff" stroke="var(--l0)" stroke-width="5" stroke-dasharray="18 12"/>
+  <path d="M2 2 H1698 V1182 H2 Z M48 48 V1136 H1652 V48 Z" fill="var(--mg)" fill-opacity="0.12" fill-rule="evenodd"/>
+  <g fill="var(--app-surface)"><rect x="48" y="48" width="240" height="96" rx="24"/><rect x="48" y="168" width="240" height="96" rx="24"/><rect x="48" y="288" width="240" height="96" rx="24"/><rect x="48" y="408" width="240" height="96" rx="24"/></g>
+  <g fill="var(--app-surface)"><rect x="760" y="48" width="832" height="224" rx="24"/><rect x="760" y="320" width="832" height="224" rx="24"/><rect x="760" y="616" width="832" height="224" rx="24"/></g>
+  <text x="336" y="104" font-size="34" font-weight="700" fill="var(--ink)">도전 중인 미션</text>
+  <circle cx="592" cy="92" r="20" fill="var(--ink)"/><text x="592" y="104" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">!</text>
+  <rect x="628" y="64" width="620" height="56" rx="28" fill="#ffffff" stroke="var(--l3p)" stroke-width="5"/>
+  <text x="660" y="102" font-size="26" fill="var(--sub)">한 번에 3개까지 도전할 수 있어요. …</text>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="var(--l3p)"/></marker></defs>
+  <rect x="1248" y="64" width="404" height="56" rx="28" fill="none" stroke="var(--l3p)" stroke-width="3" stroke-dasharray="10 8"/>
+  <line x1="1170" y1="150" x2="1640" y2="150" stroke="var(--l3p)" stroke-width="4" marker-end="url(#ah)"/>
+  <text x="1300" y="186" font-size="26" font-weight="700" fill="var(--l3p)">최대 →a까지 · 넘치면 두 줄</text>
+  <line x1="628" y1="40" x2="628" y2="144" stroke="var(--l3p)" stroke-width="4"/><text x="636" y="40" font-size="24" font-weight="700" fill="var(--l3p)">고정</text>
+  <line x1="612" y1="150" x2="628" y2="150" stroke="var(--sub)" stroke-width="3"/><text x="606" y="180" font-size="26" font-weight="700" fill="var(--sub)">16</text>
+  <rect x="450" y="1016" width="800" height="72" rx="36" fill="none" stroke="var(--l3p)" stroke-width="3" stroke-dasharray="10 8"/>
+  <rect x="610" y="1016" width="480" height="72" rx="36" fill="var(--app-button_dark)" stroke="var(--l3p)" stroke-width="5"/>
+  <line x1="590" y1="980" x2="460" y2="980" stroke="var(--l3p)" stroke-width="4" marker-end="url(#ah)"/>
+  <line x1="1110" y1="980" x2="1240" y2="980" stroke="var(--l3p)" stroke-width="4" marker-end="url(#ah)"/>
+  <text x="850" y="990" font-size="26" font-weight="700" fill="var(--l3p)" text-anchor="middle">가운데 고정 · 최대 800</text>
+  <text x="850" y="1062" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">도전 슬롯이 가득 찼어요.</text>
+  <line x1="850" y1="1090" x2="850" y2="1134" stroke="var(--sub)" stroke-width="3"/><text x="862" y="1124" font-size="28" font-weight="700" fill="var(--sub)">a</text>
+  <g font-size="30" font-weight="700" text-anchor="middle">
+    <g><rect x="644" y="136" width="48" height="40" rx="8" fill="var(--l3p)"/><text x="668" y="166" fill="#fff">3</text></g>
+    <g><rect x="1258" y="1016" width="48" height="40" rx="8" fill="var(--l3p)"/><text x="1282" y="1046" fill="#fff">4</text></g>
+  </g>
+</svg>
+<p class="cap">mission_info와 알림에는 scrim이 없다. 보라 점선은 글이 길 때 늘어날 수 있는 최대 범위다. 알림 크기·색은 시안이 없어 [제안]이다.</p>
+</div>
+
+<div>
+<section class="card">
+  <h2>범례</h2>
+  <div class="legend">
+    <div><span class="sw l0"></span>L0 창</div>
+    <div><span class="sw l3p"></span>L3 팝업 · 알림</div>
+    <div><span class="sw l2"></span>팝업 안 내용</div>
+    <div><span class="sw ct"></span>없으면 빠지는 자리</div>
+    <div><span class="sw mg"></span>여백 (팝업 안 p, 창 a)</div>
+    <div><span class="sw scrim"></span>scrim</div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>공통 규칙</h2>
+  <ul class="rules">
+    <li>팝업은 <b>L3</b>. 화면 위에 하나만 뜬다. 새 팝업이 뜨면 앞의 것은 닫힌다.</li>
+    <li>confirm_popup은 <b>창 정중앙</b>. 뒤를 <b>scrim</b>으로 덮고, 뒤 화면은 눌리지 않는다. scrim을 누르면 닫힌다.</li>
+    <li>mission_info와 알림은 scrim이 없고 뒤 화면을 막지 않는다. 폭은 글 길이에 따라 바뀐다(Hug contents). 고정되는 쪽과 최대 폭은 요소 표.</li>
+    <li>confirm_popup 안: 안쪽 여백 <b>p = 48</b>, 크기·간격은 <b>8의 배수</b>. 글은 모두 가로 중앙.</li>
+    <li>제목·본문은 <b>한 줄</b>. 넘치면 말줄임(…). 버튼 글자는 <b>small_bold</b>.</li>
+    <li>높이 = 내용. 본문이 있으면 352, 없으면 296.</li>
+    <li>문구와 버튼 글자는 <a href="../디자인/디자인_시스템.md#확인-팝업-confirm_popup">디자인 시스템 7절</a> 표를 따른다.</li>
+    <li>confirm_popup을 쓰는 일(도전, 취소, 비우기, 구매)은 모두 정차 중에만 한다. 주행 중에는 뜨지 않는다.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>요소</h2>
+  <table>
+    <thead><tr><th>#</th><th>요소</th><th>위치</th><th>누르면</th></tr></thead>
+    <tbody>
+      <tr><td><span class="n l0">0</span></td><td class="name">창</td><td>2칸 창 1700 × 1184</td><td class="drive">—</td></tr>
+      <tr><td><span class="n" style="background:#111">1</span></td><td class="name">막<small>scrim</small></td><td>창 전체 · <span class="k">scrim</span></td><td class="drive">팝업 닫기</td></tr>
+      <tr><td><span class="n l3p">2</span></td><td class="name">확인 팝업<small>confirm_popup</small></td><td>창 정중앙 · 폭 800 · 높이 = 내용 · 모서리 radius_xl(32) · 그림자 shadow_soft · 바탕 <span class="k">white</span></td><td class="drive">—</td></tr>
+      <tr class="sub"><td><span class="n ghost">2-1</span></td><td class="name">제목<small>large_bold</small></td><td><span class="k">↑p</span> · 가로 중앙 · 줄 높이 56</td><td class="drive">—</td></tr>
+      <tr class="sub"><td><span class="n ghost">2-2</span></td><td class="name">본문<small>small_regular</small></td><td>글자 <span class="k">ink</span> 84% · 2-1 아래 16 · 가로 중앙 · 줄 높이 40 · 없으면 자리째 뺀다</td><td class="drive">—</td></tr>
+      <tr class="sub"><td><span class="n ghost">2-3</span></td><td class="name">왼쪽 버튼<small>button_dark</small></td><td><span class="k">↓←p</span> · 336 × 96 · 2-2(없으면 2-1) 아래 48</td><td class="drive">하려는 일을 하고 닫힌다</td></tr>
+      <tr class="sub"><td><span class="n ghost">2-4</span></td><td class="name">오른쪽 버튼<small>button_light</small></td><td><span class="k">↓→p</span> · 336 × 96 · 2-3과 32 띄움(누르는 영역 사이 24 이상)</td><td class="drive">닫힌다</td></tr>
+      <tr><td><span class="n l3p">3</span></td><td class="name">말풍선<small>mission_info</small></td><td>info_icon 오른쪽 16 · info_icon과 세로 가운데 · <b>왼쪽 고정, 오른쪽으로 늘어남</b> · 폭 Hug contents, 최대 <span class="k">→a</span>까지 · 넘치면 두 줄, 높이 = 내용(한 줄 56) · 모서리 pill · 테두리 ink 40% 2</td><td class="drive">닫힌다</td></tr>
+      <tr><td><span class="n l3p">4</span></td><td class="name">알림<small>L3</small></td><td><span class="tbd">[제안]</span> <span class="k">↓a</span> · 창 가로 중앙 · <b>가운데 고정, 양옆으로 늘어남</b> · 폭 Hug contents, 최대 800 · 넘치면 말줄임 · 높이 72 · 바탕 <span class="k">button_dark</span> · 글자 <span class="k">white</span></td><td class="drive">없음 · 2초 <span class="tbd">[임시]</span> 뒤 사라진다</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="card">
+  <h2>쓰는 곳</h2>
+  <table>
+    <thead><tr><th>팝업</th><th>여는 것</th><th>본문</th><th>캡처</th></tr></thead>
+    <tbody>
+      <tr><td class="name">미션 도전</td><td>미션 화면 제공 카드</td><td>있음 · 352</td><td><code>missionView_selectPopup.png</code>, <code>missionView_componentSelectPopup.png</code></td></tr>
+      <tr><td class="name">도전 취소</td><td>미션 화면 도전 중 카드</td><td>있음 · 352</td><td><code>missionView_canclePopup.png</code></td></tr>
+      <tr><td class="name">슬롯 비우기</td><td>미션 화면 성공·실패 카드</td><td>있음 · 352</td><td>없음</td></tr>
+      <tr><td class="name">아이템 구매</td><td>상점 "구매하기"</td><td>있음 · 352 (시안은 없음)</td><td><code>storeView_lockItem_popup.png</code></td></tr>
+      <tr><td class="name">포인트 부족</td><td>상점 구매</td><td>있음 · 352 (시안은 없음)</td><td><code>storeView_lockItem_componentPopup.png</code></td></tr>
+      <tr><td class="name">mission_info</td><td>미션 화면 info_icon</td><td>문구 <code>mission_info_*</code></td><td>없음</td></tr>
+      <tr><td class="name">알림</td><td>도전 슬롯이 찼을 때 제공 카드</td><td>"도전 슬롯이 가득 찼어요."</td><td>없음</td></tr>
+    </tbody>
+  </table>
+
+  <details>
+    <summary>확인 필요 1</summary>
+    <ul>
+      <li>4 알림의 크기·색·시간·최대 폭 (시안 없음)</li>
+    </ul>
+  </details>
+</section>
+</div>
+
+</div>
+</main>
+</body>
+</html>

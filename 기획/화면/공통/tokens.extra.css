@@ -1,0 +1,21 @@
+/* 앱 색은 모두 디자인 시스템 4절 팔레트에 있다. 여기에는 팔레트 색에서 만든 값과 모양 값만 둔다.
+   팔레트에 같은 이름이 생기면 build.js는 팔레트 값을 쓰고 이 줄은 무시한다. */
+
+/* 투명도로 쓰는 것 (디자인 시스템 4절 "투명도로 쓰는 것") */
+:root {
+  --app-ink_15: color-mix(in srgb, var(--app-ink) 15%, #FFFFFF);
+  --app-scrim: color-mix(in srgb, var(--app-ink) 40%, transparent);
+  --app-success_card: color-mix(in srgb, var(--app-green_dark) 20%, #FFFFFF);
+  --app-fail_card: color-mix(in srgb, var(--app-red) 20%, #FFFFFF);
+}
+
+/* 모양 (디자인 시스템 5절) */
+:root {
+  --radius_s: 8px;
+  --radius_m: 16px;
+  --radius_l: 24px;
+  --radius_xl: 32px;
+  --shadow_card: 0 4px 4px rgba(0, 0, 0, 0.25), 0 3px 12px rgba(0, 0, 0, 0.045);
+  --shadow_float: 0 8px 16px rgba(0, 0, 0, 0.25);
+  --shadow_soft: 0 4px 16px rgba(0, 0, 0, 0.08);
+}

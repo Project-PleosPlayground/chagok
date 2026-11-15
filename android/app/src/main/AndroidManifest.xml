@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- AAOS 표준: 속도(PERF_VEHICLE_SPEED), 기어(GEAR_SELECTION) -->
+    <uses-permission android:name="android.car.permission.CAR_SPEED" />
+    <uses-permission android:name="android.car.permission.CAR_POWERTRAIN" />
+
+    <!-- Pleos Vehicle SDK (조사_API가용범위 3절 권한 표) -->
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />          <!-- Brake, Odometer -->
+    <uses-permission android:name="pleos.car.permission.READ_CAR_STEERING" />  <!-- SteeringWheel -->
+    <uses-permission android:name="pleos.car.permission.CAR_LIGHTS" />         <!-- TurnSignal -->
+    <uses-permission android:name="pleos.car.permission.CAR_SEATS" />          <!-- SeatBeltBuckled -->
+    <uses-permission android:name="pleos.car.permission.CAR_ENERGY" />         <!-- EvBatteryStateOfCharge, EvChargePortOpen -->
+
+    <!-- Pleos TextToSpeech (ON_DEVICE 는 앱 등록 불필요) -->
+    <uses-permission android:name="pleos.car.permission.TTS_SERVICE" />
+
+    <!-- AI 중계 서버(#13), 원격 콘텐츠 다운로드(#31). 둘 다 HTTPS 만 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 감점 행동이 난 곳(반복 지점, #13). 기기 안에만 저장, 서버로 보내지 않는다 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.type.automotive" android:required="true" />
+
+    <!-- 저장 데이터(주행 위치 포함)는 기기 안에만 둔다. 클라우드 백업에 넣지 않는다 (#10 리뷰) -->
+    <application
+        android:name=".SafetyApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Material.NoActionBar">
+
+        <uses-library android:name="android.car" android:required="false" />
+
+        <!-- CCP(로터리 컨트롤러) 미지원 선언. 모든 조작은 터치로 한다 (Pleos ccp-rotary-controller-development "CCP 미지원 선언 방법", #88) -->
+        <meta-data android:name="com.hmg.rotary.ROTARY_SUPPORTED" android:value="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <!-- 주행 중에도 쓰는 화면 (AAOS Distraction Optimization 선언, #43) -->
+            <meta-data android:name="distractionOptimized" android:value="true" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Gleo 음성 질의 (Pleos Gleo Interface, #3). action 은 assets/schema.json 의 함수 이름이다 -->
+        <receiver
+            android:name=".gleo.GleoActionReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="GET_DRIVE_SCORE" />
+                <action android:name="GET_PET_STATUS" />
+                <action android:name="GET_MISSION_PROGRESS" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

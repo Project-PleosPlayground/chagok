@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- AI 리포트 동의 (#13). 설정 화면 토글 옆에 보인다. 보내는 항목은 core/ai/AiPayload.kt 와 맞춘다 -->
+    <string name="ai_consent_title">AI 주행 리포트</string>
+    <string name="ai_consent_notice">켜면 주행이 끝날 때 주행 요약을 AI 중계 서버를 거쳐 Anthropic 의 Claude 로 보내 캐릭터의 한마디를 받아요. 보내는 것: 요일과 시간대(아침·저녁 등), 주행 거리와 시간, 점수, 급제동·급가속 같은 이벤트 횟수와 속도, 최근 7일 기록 요약(지난주 대비, 자주 놀라는 시간대, 자주 놀라는 곳이 몇 군데인지), 미션 이름. 위치, 도로명, 날짜, 정확한 시각, 차량 번호, 이름은 보내지 않아요. 급제동한 곳의 위치는 이 기기 안에만 저장해요. 보낸 내용은 한마디를 만드는 데만 쓰고, 중계 서버에는 저장하지 않아요. 끄면 바로 보내지 않고 앱 안 문장을 써요.</string>
+    <string name="ai_consent_on">켜기</string>
+    <string name="ai_consent_off">끄기</string>
+    <!-- 첫 주행 종료 화면에서 한 번 묻는다 -->
+    <string name="ai_consent_ask">주행이 끝날 때마다 캐릭터가 AI로 한마디 해 줄까요? 설정에서 언제든 끌 수 있어요.</string>
+    <string name="ai_consent_ask_yes">좋아요</string>
+    <string name="ai_consent_ask_no">괜찮아요</string>
+    <string name="ai_consent_ask_more">보내는 것 보기</string>
+</resources>

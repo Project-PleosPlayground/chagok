@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 앱 아이콘 (11/15, 기획/디자인/Image/AppIcon/chagok-icon-square-1024.png). 그림은 가운데 76dp 에 두어 어떤 모양으로 잘려도 캐릭터가 남는다 -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_launcher_background" />
+    <foreground android:drawable="@mipmap/ic_launcher_foreground" />
+</adaptive-icon>

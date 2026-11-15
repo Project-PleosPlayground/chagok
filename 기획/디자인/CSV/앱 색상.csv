@@ -1,0 +1,28 @@
+이름,HEX,용도,메모
+profile_background,#E2E5EB,프로필 상자 배경,
+profile_background,#E2E5EB,프로필 카드 배경,
+button_dark,#44464E,저장·삭제 버튼 배경,
+ink,#131417,추가 버튼 아이콘과 배경(5%) · 삭제 버튼 안쪽 테두리(10%),
+black,#000000,취소·프로필 관리 버튼의 테두리와 글자 · 수정 아이콘 · 추가 버튼(누름) 테두리,ink와 같은 색으로 맞출지 [확인필요]
+navy,#152457,다음 버튼 배경,
+white,#FFFFFF,저장·삭제 버튼 글자 · 다음 버튼 화살표 · 차종 이름 글자 · 취소 버튼 배경(20%) · 차종 카드 배경(3%),
+white,#FFFFFF,화면 배경 · 미션 카드(도전 중) 배경 · 주행 시작·주행 종료 버튼 글자 · 포인트 숫자 · 주행 시작 화살표,
+ink,#131417,탭 글자(홈·미션·아이템·통계) · 미션 카드 안 글자(미션명·보상 숫자·진행도) · 미션 상태 라벨 글자 · 미션 오버레이 제목 · 탭 배경,탭 배경은 5% 투명도로 사용
+text_secondary,#636366,미션 카드 설명 글자,
+text_tertiary,#8E8E93,미션 오버레이 보조 글자(3개 중 1개 성공 · 음성 안내 문구) · 스피커 아이콘,
+panel_background,#F2F2F7,미션 패널·오버레이 배경 · 진행 바 빈 트랙,
+button_dark,#44464E,선택된 탭(홈) 배경 · 미션 선택하기 버튼 배경,
+primary_blue,#2563EB,주행 시작 버튼 배경 · 포인트 바(coin_bar) 배경,
+danger_red,#D9625B,주행 종료 버튼 배경,
+success_card_tint,#008000,성공 미션 카드 배경,20% 투명도
+success_label,#EAF7ED,성공 라벨 배경,
+progress_orange,#FF9500,진행 바 채움(도전 중 카드),
+progress_label,#FFF3E0,도전 중 라벨 배경,
+fail_card_tint,#FF0000,실패 미션 카드 배경,20% 투명도
+fail_label,#FFF0F1,실패 라벨 배경,
+platform_gray,#D9D9D9,캐릭터 발판 그림자 · 경험치 바 테두리,
+close_icon,#000000,주행 종료 버튼의 X 아이콘,54% 투명도
+progress_bar_inside,#626D7C,도전 미션 내 달성률 수치,
+mission_popup_inside,#131417,도전 미션 취소 팝업 내 포인트 차감 수치 안내,84% 투명도
+item_store,#F2F6FD,아이템이 위치한 박스 + 도전 미션 박스,
+profile_card,#E2E5EB,프로필 박스 내부 색상 + 미션 박스 테두리 선 ,

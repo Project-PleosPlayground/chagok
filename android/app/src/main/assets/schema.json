@@ -1,0 +1,47 @@
+{
+  "packageName": "ai.safetypoc.app",
+  "appDescription": "A driving companion app where a pet character grows as the driver drives safely, with safety scores and driving missions.",
+  "version": "0.1",
+  "invokeWord": "펫",
+  "actionCalls": [
+    {
+      "type": "function",
+      "function": {
+        "component": "service",
+        "name": "GET_DRIVE_SCORE",
+        "description": "Gets the safety score and the counts of risky driving events from the driver's most recent completed drive.",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": []
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "component": "service",
+        "name": "GET_PET_STATUS",
+        "description": "Gets the name, growth stage, experience needed for the next stage, and points of the driver's pet character.",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": []
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "component": "service",
+        "name": "GET_MISSION_PROGRESS",
+        "description": "Gets the driving missions the driver is currently challenging and the progress of each mission.",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": []
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+키,문구,화면,메모
+profile_empty,아직 프로필이 없어요.\n+ 버튼을 눌러 첫 프로필을 만들어 보세요.,profileView,
+profile_select,사용할 프로필을 선택해 주세요.,profileView,
+profile_select_edit,수정할 프로필을 선택해 주세요.,editProfileMode,
+profile_name,프로필 이름,,
+profile_instruction,차량 화면과 앱에 이 이름으로 표시돼요.,,
+account_name_label,,,문구 비어 있음
+profile_edit_button,프로필 관리,profileView,버튼 글자. 키 = 컴포넌트 이름
+save_button,저장,addProfileView,버튼 글자
+cancel_button,취소,addProfileView,버튼 글자
+delete_button,삭제,editProfileView,버튼 글자
+profile_delete_title,프로필을 삭제할까요?,editProfileView,[제안] 삭제 확인 팝업 제목
+profile_delete_body,주행 기록과 성장도 함께 지워져요.,editProfileView,[제안] 삭제 확인 팝업 본문
+mission_topic,도전 중인 미션,,
+buy_button,구매하기,storeView,버튼 글자
+apply_button,적용하기,storeView,버튼 글자
+complete_mission_button,완료 미션,missionView,버튼 글자
+mission_info_challenge,한번 주행에 최대 3개까지 도전할 수 있어요.\n미션을 길게 누르면 도전을 그만둘 수 있습니다.,missionView,도전 미션 안내 말풍선
+mission_info_personal,하루에 최대 2개까지 받을 수 있어요.\nAI가 내 주행 습관에 맞춰 미션을 만들어 줘요.,missionView,개인 미션 안내 말풍선
+mission_info_weekly,미션 10개가 항상 제공돼요.\n원하는 미션을 골라 도전해 보세요.,missionView,주간 미션 안내 말풍선
+mission_info_complete,최근 1개월 동안 완료한 미션을 볼 수 있어요.,missionView,완료 미션 안내 말풍선

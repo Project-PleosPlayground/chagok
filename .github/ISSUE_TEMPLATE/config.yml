@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 협업 규칙 (CONTRIBUTING.md)
+    url: https://github.com/Project-PleosPlayground/Project-PleosPet/blob/dev/CONTRIBUTING.md
+    about: 이슈를 만들기 전에 작업 흐름과 라벨 기준을 확인하세요.

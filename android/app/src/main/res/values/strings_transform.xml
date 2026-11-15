@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 변신 영상 (홈 캐릭터 누르기, 레벨업) -->
+    <string name="transform_hint">누르면 변신해요</string>
+    <string name="transform_title">Lv %1$d 로 변신!</string>
+    <string name="transform_title_named">%1$s, Lv %2$d 로 변신!</string>
+    <string name="transform_level_up">LEVEL UP!</string>
+    <string name="transform_evolved">진화했어요!</string>
+    <string name="transform_evolved_named">%1$s 진화했어요!</string>
+    <string name="transform_lv">Lv %1$d</string>
+    <string name="transform_evolution">EVOLUTION</string>
+    <string name="transform_presents">A CHAGOK ORIGINAL</string>
+    <string name="transform_lv_prefix">LV.</string>
+    <string name="transform_tagline">%1$d단계로 진화하다</string>
+    <string name="transform_tagline_named">%1$s, %2$d단계로 진화하다</string>
+    <string name="transform_billing">NO HARD BRAKES · SIGNAL ON · SMOOTH START\nA SAFE DRIVING STORY · NOW ON YOUR DASHBOARD</string>
+    <string name="transform_from">Lv %1$d 에서 진화</string>
+    <string name="transform_next">다음</string>
+    <string name="transform_close">닫기</string>
+</resources>

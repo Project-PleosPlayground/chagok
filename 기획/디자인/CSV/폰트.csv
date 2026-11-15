@@ -1,0 +1,11 @@
+역할,폰트,크기,굵기,행간,자간,메모
+Profile_Heading,Roboto,48,Medium,0%,auto,profileView
+Profile_Name,Roboto,40,Medium,0%,auto,profileView
+Car_Name,Roboto,24,Medium,0%,auto,addProfileView
+Item_heading,Roboto,32,Medium,0%,auto,storeView
+pop_up_inside,Roboto,30,Regular,38,0%,missionView
+Mission_topic,Roboto,32,Semibold,,,missionView
+Mission_heading,Roboto,30,Semibold,,,missionView
+Mission_context,Roboto,24,Medium,,,missionView
+Mission_empty,Roboto,30,Medium,,,missionView
+Mission_result,Roboto,20,Medium,,,missionView
