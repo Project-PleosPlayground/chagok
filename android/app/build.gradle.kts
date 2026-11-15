@@ -28,6 +28,8 @@ android {
         applicationId = "ai.safetypoc.app"
         minSdk = 28          // Pleos Connect 요구: API 28 이상
         targetSdk = 35
+        // 공모전 규칙: APK 는 저장소 apk/ 폴더에 올린다(GitHub 파일 한도 100MB). 에뮬레이터가 쓰는 두 ABI 만 넣어 114MB → 100MB 아래로
+        ndk { abiFilters += listOf("arm64-v8a", "x86_64") }
         versionCode = 2
         versionName = "1.0"
 
