@@ -1,4 +1,16 @@
 # 차곡 (CHAGOK)
+* 앱 화면
+<img width="820" alt="앱 화면" src="docs/screens/home.png" />
+
+* 주행 결과 화면(친근한 피드백)
+<img width="820" alt="주행 결과 화면" src="docs/screens/drive_result.png" />
+
+* 주행기록(감점 지점 지도로 확인 가능)
+<img width="820" alt="주행기록" src="docs/screens/drive_detail.png" />
+
+* 영상 링크
+https://github.com/Project-PleosPlayground/chagok/releases/download/v1.0/chagokchagok_chagok_demo.mp4
+
 
 **운전 습관이 차곡차곡 쌓여 캐릭터가 자라는 차량용 앱.**
 2026 현대자동차 차량용 앱 개발 공모전 출품작 (팀 차곡차곡). Pleos Connect(Android Automotive) 기반.
